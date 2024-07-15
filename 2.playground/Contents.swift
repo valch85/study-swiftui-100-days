@@ -32,3 +32,11 @@ let missionMessage2 = "Apoloo \(number) landed on the Moon."
 print(missionMessage2)
 
 print("5 x 5 is \(5 * 5)")
+
+//Checkpoint1
+let  temperatureInCel = 16
+print("""
+temperature in Farengate is \(temperatureInCel * 9 / 5 + 32)°
+temperature in Celsius is \(temperatureInCel)°
+""")
+
