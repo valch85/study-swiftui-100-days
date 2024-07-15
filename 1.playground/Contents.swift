@@ -34,3 +34,25 @@ print(actor.uppercased())
 
 print(actor.hasPrefix("a day"))
 print(filename.hasSuffix(".jpg"))
+
+let score = 10
+let reallyBig = 100_000_000
+print(reallyBig)
+
+let lowerScore = score - 2
+let higherScore = score + 10
+let boubleScore = score * 2
+let squaredScore =  score * score
+let halvedScore = score / 2
+
+var counter = 10
+//counter = counetr + 5
+counter += 5
+print(counter)
+//print("test4")
+counter *= 2
+counter -= 10
+counter /= 2
+
+let number = 120
+print(number.isMultiple(of: 3))
