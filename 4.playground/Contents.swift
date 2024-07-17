@@ -37,4 +37,9 @@ username = "@twostraws"
 // lots of logic
 print(username)
 
-let scores: Int = "Zero"
+//let scores: Int = "Zero"
+//Checkpoint 2
+
+var testArray: [String] = ["1st-string", "2nd-string", "3d-string", "4th-string", "1st-string"]
+print(testArray.count)
+print(Set(testArray).count)
