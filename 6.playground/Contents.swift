@@ -61,3 +61,40 @@ while roll != 20 {
 }
 
 print("Criticl hit!")
+
+let colors = ["Red", "Green", "Blue", "Orange", "Yellow"]
+var colorCounter = 0
+while colorCounter < 5 {
+    print("\(colors[colorCounter]) is a popular color.")
+    colorCounter += 1
+}
+
+print("Color is \(colors[1])")
+
+
+var counter = 2
+while counter < 64 {
+    print("\(counter) is a power of 2.")
+    counter *= 2
+    print(counter)
+}
+
+var cats: Int = 0
+while cats < 10 {
+    cats += 1
+    print("I'm getting another cat.\(cats)")
+}
+
+var itemsSold: Int = 0
+while itemsSold < 5000 {
+    itemsSold += 100
+    if itemsSold.isMultiple(of: 10000) {
+        print("\(itemsSold) items sold - a big milestone!")
+    }
+}
+
+var averageScore = 2.5
+while averageScore < 15.0 {
+    averageScore += 2.5
+    print("The average score is \(averageScore)")
+}
