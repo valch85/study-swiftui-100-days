@@ -97,6 +97,8 @@ enum PasswordError: Error {
     case short, obvious
 }
 
+
+
 let string = "12345"
 
 do {
@@ -105,6 +107,7 @@ do {
 } catch {
     print("There was an error.")
 }
+
 
 let string2 = "12345"
 
@@ -119,5 +122,33 @@ do {
     print("There was an error.")
 }
 
-//checkpoint-4
 
+
+//checkpoint-4 вычисление квадратного корня своими руками и ловля ошибок
+func squareRoot(_ digit: Int) throws -> Int {
+    var value = 0
+    if digit < 1 || digit > 10000 {
+        throw squareRootError.out
+    } else {
+        for _ in 1...100 {
+            value += 1
+            if value * value == digit {
+                print("The square root of \(digit) is \(value).")
+                return value
+            }
+        }
+        throw squareRootError.out
+        }
+}
+
+enum squareRootError: Error {
+    case out, noroot
+}
+
+do {
+    try squareRoot(25)
+} catch squareRootError.out {
+    print("Out of bounds.")
+} catch squareRootError.noroot {
+    print("No root.")
+}
