@@ -125,6 +125,7 @@ do {
 
 
 //checkpoint-4 вычисление квадратного корня своими руками и ловля ошибок
+// https://www.hackingwithswift.com/quick-start/beginners/checkpoint-4
 func squareRoot(_ digit: Int) throws -> Int {
     var value = 0
     if digit < 1 || digit > 10000 {
