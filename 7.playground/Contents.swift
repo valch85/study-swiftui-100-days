@@ -70,3 +70,13 @@ func pythagoras2(a: Double, b: Double) -> Double {
 
 let d = pythagoras2(a: 3, b: 4)
 print(d)
+
+func getUser() -> (Int, String, Bool) {
+   return (5, "Swift", true)
+}
+
+let user = getUser()
+print("Name: \(user.0) \(user.1) \(user.2)")
+
+let check = (1, true, "tra-ta-ta")
+print("\(check.2)")
