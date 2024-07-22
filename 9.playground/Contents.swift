@@ -1,19 +1,15 @@
 import Cocoa
 
+// greetUser
 func greetUser() {
     print("Hi there!")
 }
-
 greetUser()
 
 var greetCopy = greetUser
 greetCopy()
 
-
-//let sayHello = {
-  //  print("Hi there! from sayHello")
-//}
-
+// Hello
 let sayHello = { (name: String) -> String in
     "Hi \(name)!"
 }
