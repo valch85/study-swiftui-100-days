@@ -159,3 +159,46 @@ doImportantWork {
 } third: {
     print("This is the third work")
 }
+
+
+func tendGarden(activities: () -> Void) {
+    print("I love gardening")
+    activities()
+}
+tendGarden {
+    print("Let's grow some roses!")
+}
+
+func makeCake(instructions: () -> Void) {
+    print("Wash hands")
+    print("Collect ingredients")
+    instructions()
+    print("Here's your cake!")
+}
+makeCake {
+    print("Mix egg and flour")
+}
+
+func brewTea(steps: () -> Void) {
+    print("Get tea")
+    print("Get milk")
+    print("Get sugar")
+    steps()
+}
+brewTea {
+    print("Brew tea in teapot.")
+    print("Add milk to cup")
+    print("Pour tea into cup")
+    print("Add sugar to taste.")
+}
+
+
+func goCamping(then action: () -> Void) {
+    print("We're going camping!")
+    action()
+}
+goCamping {
+    print("Sing songs")
+    print("Put up tent")
+    print("Attempt to sleep")
+}
