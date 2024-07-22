@@ -31,7 +31,7 @@ let data: (Int) -> String = getUserData
 let user = data(1989)
 print(user)
 
-
+// Team
 let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
 let sortedTeam = team.sorted()
 print(sortedTeam)
@@ -45,8 +45,6 @@ func captainFirstSorted(name1: String, name2: String) -> Bool {
     }
     return name1 < name2
 }
-//let captainFirstTeam = team.sorted(by: captainFirstSorted)
-//print(captainFirstTeam)
 
 let captainFirstTeam = team.sorted(by: { (name1: String, name2: String) -> Bool in
     if name1 == "Suzanne" {
@@ -58,41 +56,6 @@ let captainFirstTeam = team.sorted(by: { (name1: String, name2: String) -> Bool 
     return name1 < name2
 })
 print(captainFirstTeam)
-
-//var pickFruit = { (name: String) in
-//    switch name {
-//    case strawberry:
-//        fallthrough
-//    case raspberry:
-//        print("Strawberries and raspberries are half price!")
-//    default:
-//        print("We don't have those.")
-//    }
-//}
-//pickFruit("strawberry")
-
-let measureSize = { (inches: Int) -> String in
-    switch inches {
-    case 0...26:
-        return "XS"
-    case 27...30:
-        return "S"
-    case 31...34:
-        return "M"
-    case 35...38:
-        return "L"
-    default:
-        return "XL"
-    }
-}
-print (measureSize(36))
-
-var buyMagazine = { (name: String) -> Int in
-    let amount = 10
-    print("\(name) costs \(amount)")
-    return amount
-}
-buyMagazine("Wired")
 
 let captainFirstTeam2 = team.sorted { name1, name2 in
     if name1 == "Suzanne" {
@@ -125,6 +88,30 @@ print(tOnly)
 
 let uppercaseTeam = team.map { $0.uppercased() }
 print(uppercaseTeam)
+
+// Size
+let measureSize = { (inches: Int) -> String in
+    switch inches {
+    case 0...26:
+        return "XS"
+    case 27...30:
+        return "S"
+    case 31...34:
+        return "M"
+    case 35...38:
+        return "L"
+    default:
+        return "XL"
+    }
+}
+print (measureSize(36))
+
+var buyMagazine = { (name: String) -> Int in
+    let amount = 10
+    print("\(name) costs \(amount)")
+    return amount
+}
+buyMagazine("Wired")
 
 // fill array
 func makeArray(size: Int, using generator: () -> Int) -> [Int] {
@@ -202,3 +189,29 @@ goCamping {
     print("Put up tent")
     print("Attempt to sleep")
 }
+
+
+//Checkpoint 5
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+
+let result = luckyNumbers.sorted().isMultiple(of: 2)
+print(result)
+
+
+
+
+//func removeFromArray(for massiv: Array<Any>) -> Array<Any> {
+//    var result = []
+//    var i = 0
+//    for i in massiv {
+//        if i %2 == 0 {
+//        } else {
+//            result.append(i)
+//        }
+//        i += 1
+//    }
+//    
+//        
+//}
+
