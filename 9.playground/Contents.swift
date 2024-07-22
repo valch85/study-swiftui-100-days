@@ -58,3 +58,104 @@ let captainFirstTeam = team.sorted(by: { (name1: String, name2: String) -> Bool 
     return name1 < name2
 })
 print(captainFirstTeam)
+
+//var pickFruit = { (name: String) in
+//    switch name {
+//    case strawberry:
+//        fallthrough
+//    case raspberry:
+//        print("Strawberries and raspberries are half price!")
+//    default:
+//        print("We don't have those.")
+//    }
+//}
+//pickFruit("strawberry")
+
+let measureSize = { (inches: Int) -> String in
+    switch inches {
+    case 0...26:
+        return "XS"
+    case 27...30:
+        return "S"
+    case 31...34:
+        return "M"
+    case 35...38:
+        return "L"
+    default:
+        return "XL"
+    }
+}
+print (measureSize(36))
+
+var buyMagazine = { (name: String) -> Int in
+    let amount = 10
+    print("\(name) costs \(amount)")
+    return amount
+}
+buyMagazine("Wired")
+
+let captainFirstTeam2 = team.sorted { name1, name2 in
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
+    }
+
+    return name1 < name2
+}
+
+let captainFirstTeam3 = team.sorted {
+    if $0 == "Suzanne" {
+        return true
+    } else if $1 == "Suzanne" {
+        return false
+    }
+
+    return $0 < $1
+}
+
+let reverseTeam = team.sorted {
+    return $0 > $1
+}
+
+let reverseTeam2 = team.sorted { $0 > $1 }
+
+let tOnly = team.filter { $0.hasPrefix("T") }
+print(tOnly)
+
+let uppercaseTeam = team.map { $0.uppercased() }
+print(uppercaseTeam)
+
+// fill array
+func makeArray(size: Int, using generator: () -> Int) -> [Int] {
+    var numbers = [Int]()
+
+    for _ in 0..<size {
+        let newNumber = generator()
+        numbers.append(newNumber)
+    }
+
+    return numbers
+}
+let rolls = makeArray(size: 50) {
+    Int.random(in: 1...20)
+}
+print(rolls)
+
+// multiple function as data
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
+}
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
