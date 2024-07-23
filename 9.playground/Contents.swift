@@ -190,11 +190,10 @@ goCamping {
 //Checkpoint 5
 let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
 
-
-let result = luckyNumbers.sorted().isMultiple(of: 2)
-print(result)
-
-
+let result = luckyNumbers
+    .filter { !$0.isMultiple(of: 2) }   // filter out even numbers
+    .sorted()                           // sort the odd numbers
+    .map { print ("\($0) is a lucky number.") } // map to strings
 
 
 //func removeFromArray(for massiv: Array<Any>) -> Array<Any> {
@@ -211,3 +210,19 @@ print(result)
 //        
 //}
 
+// map
+let numbers = [1, 2, 3, 4]
+let doubled = numbers.map { $0 * 2 }
+print(doubled)
+
+let strings = ["John", "Paul", "George", "Ringo"]
+let uppercased = strings.map { $0.uppercased() }
+
+// filtered
+let words = ["Hello", "This", "Is", "Nothing", "But", "A", "Test"]
+let filtered = words.filter { !($0.count < 4) }
+print(filtered)
+
+// isMultiple
+let data2 = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+print ( data2.filter { $0.isMultiple(of: 2) } )
