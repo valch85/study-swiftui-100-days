@@ -42,3 +42,42 @@ print(archer.vacationRemaining)
 
 let kane = Employee(name: "Lana Kane")
 let poovey = Employee(name: "Pam Poovey", vacationRemaining: 35)
+
+//Back to the future
+struct Delorean {
+    var speed = 0
+    mutating func accelerate() {
+        speed += 1
+        if speed == 88 {
+            travelThroughTime()
+        }
+    }
+    func travelThroughTime() {
+        print("Where we're going we don't need roads.")
+    }
+}
+
+print("+++++++")
+
+struct Employee2 {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+
+    var vacationRemaining: Int {
+        get {
+                vacationAllocated - vacationTaken
+        }
+
+        set {
+                vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+
+var archer2 = Employee2(name: "Sterling Archer", vacationAllocated: 14)
+archer2.vacationTaken += 4
+archer2.vacationRemaining = 5
+print(archer2.vacationAllocated)
+
+
