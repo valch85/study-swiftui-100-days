@@ -82,7 +82,7 @@ struct Employee2 {
 var archer2 = Employee2(name: "Sterling Archer", vacationAllocated: 14)
 archer2.vacationTaken += 4
 archer2.vacationRemaining = 5
-print(archer2.vacationAllocated)
+print("this answer \(archer2.vacationAllocated)")
 
 // 3 How to take action when a property changes
 // Game

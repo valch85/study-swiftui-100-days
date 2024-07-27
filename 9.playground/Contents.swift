@@ -196,21 +196,6 @@ let result = luckyNumbers
     .map { print ("\($0) is a lucky number.") } // map to strings
 
 
-//func removeFromArray(for massiv: Array<Any>) -> Array<Any> {
-//    var result = []
-//    var i = 0
-//    for i in massiv {
-//        if i %2 == 0 {
-//        } else {
-//            result.append(i)
-//        }
-//        i += 1
-//    }
-//    
-//        
-//}
-
-// map
 let numbers = [1, 2, 3, 4]
 let doubled = numbers.map { $0 * 2 }
 print(doubled)
