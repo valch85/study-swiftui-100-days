@@ -3,7 +3,9 @@ import Cocoa
 //Structs, part two
 // limit access to internal data
 struct BankAccount {
-    var funds = 0
+    private(set) var funds = 0
+    //private var funds = 0
+    //var funds = 0
 
     mutating func deposit(amount: Int) {
         funds += amount
@@ -27,3 +29,5 @@ if success {
 } else {
     print("Failed to get the money")
 }
+//account.funds -= 1000
+print (account.funds)
