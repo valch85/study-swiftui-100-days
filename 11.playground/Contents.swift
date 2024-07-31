@@ -167,8 +167,39 @@ let testNewStory1 = NewsStory(headline: "New Story Headline", isBreaking: true)
 print(testNewStory1)
 print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
 let testNewStory2 = NewsStory(headline: "New Story Headline", isBreaking: false)
-print(testNewStory1)
+print(testNewStory2)
 print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
-let testNewStory2 = NewsStory(headline: "New Story Headline")
-print(testNewStory1)
-print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
+//let testNewStory3 = NewsStory(headline: "New Story Headline")
+//print(testNewStory1)
+//print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
+
+
+//Checkpoint 6
+struct Car {
+    let model: String
+    let numberOfSeats: Int
+    var gear: Int = 0
+    
+    mutating func gearsUp() {
+        if gear < 10 {
+            gear += 1
+        } else {
+            print("You are laready on a higher gear")
+        }
+    }
+    mutating func gearsDown() {
+        if gear > 0 {
+            gear -= 1
+        } else {
+            print("You are laready on a neutral gear")
+        }
+    }
+}
+
+var vwPolo = Car(model: "Polo", numberOfSeats: 5)
+print(vwPolo)
+vwPolo.gearsUp()
+vwPolo.gearsUp()
+vwPolo.gearsUp()
+vwPolo.gearsDown()
+print(vwPolo)
