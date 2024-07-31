@@ -148,3 +148,27 @@ let igor = Employee(username: "Igor", password: "passw0rd")
 print("Username: \(igor.username)\nPassword: \(igor.password)")
 // try to get example from the "igor" object
 //print(igor.example)
+
+//Question 3/12
+struct NewsStory {
+    static var breakingNewsCount = 0
+    static var regularNewsCount = 0
+    var headline: String
+    init(headline: String, isBreaking: Bool) {
+        self.headline = headline
+        if isBreaking {
+            NewsStory.breakingNewsCount += 1
+        } else {
+            NewsStory.regularNewsCount += 1
+        }
+    }
+}
+let testNewStory1 = NewsStory(headline: "New Story Headline", isBreaking: true)
+print(testNewStory1)
+print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
+let testNewStory2 = NewsStory(headline: "New Story Headline", isBreaking: false)
+print(testNewStory1)
+print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
+let testNewStory2 = NewsStory(headline: "New Story Headline")
+print(testNewStory1)
+print("breakingNewsCount \(NewsStory.breakingNewsCount)\nregularNewsCount \(NewsStory.regularNewsCount)")
