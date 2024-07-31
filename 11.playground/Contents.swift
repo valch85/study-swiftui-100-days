@@ -107,8 +107,10 @@ struct App {
 let spotify = App(name: "Spotify")
 print("-> spotify is \(spotify)")
 
-//Static properties and methods
-struct School {
+//Static properties and methods - properties and meterds, when they are marked as static, belong to the class (struct) and not the object that is created from it
+
+//Count amount of students when add the name
+struct School2 {
     static var studentCount = 0
 
     static func add(student: String) {
@@ -116,5 +118,33 @@ struct School {
         studentCount += 1
     }
 }
-School.add(student: "Taylor Swift")
-print(School.studentCount)
+
+School2.add(student: "Taylor Swift")
+print("studentCount \(School2.studentCount)")
+
+
+struct AppData {
+    static let version = "1.3 beta 2"
+    static let saveFilename = "settings.json"
+    static let homeURL = "https://www.hackingwithswift.com"
+}
+print("\nApp Data:\n\(AppData.version)\n\(AppData.saveFilename)\n\(AppData.homeURL)")
+
+print("++++++++")
+
+// static property shouldn't belond to newly created user
+struct Employee {
+    let username: String
+    let password: String
+
+    static let example = Employee(username: "cfederighi", password: "hairforceone")
+}
+
+// get example from the stuct how to create a user
+print("Example how to create a user: \n\(Employee.example)")
+// will create a user but "static let example" will not added to the object
+let igor = Employee(username: "Igor", password: "passw0rd")
+// check that user created
+print("Username: \(igor.username)\nPassword: \(igor.password)")
+// try to get example from the "igor" object
+//print(igor.example)
