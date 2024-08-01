@@ -32,3 +32,31 @@ for i in 1...3 {
 print("Loop is finished!")
 users.removeAll()
 print("Array is clear!")
+
+// Deinitializers Question 7/12 true
+class Lightsaber {
+    deinit {
+        print("Fssshhp!")
+    }
+}
+
+// Deinitializers Question 8/12 false
+class Election {
+    init() {
+        print("And the winner is...")
+    }
+}
+
+// Deinitializers Question 9/12 true
+class DisneyMovie {
+    deinit {
+        print("Relax, there'll be another in a year.")
+    }
+}
+
+// Deinitializers Question 12/12 true
+class Firefly {
+    deinit {
+        print("I'm still annoyed that this was cancelled.")
+    }
+}
