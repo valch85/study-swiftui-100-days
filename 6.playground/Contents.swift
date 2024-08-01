@@ -179,3 +179,73 @@ repeat {
     print("Play the \(scales[scaleCounter]) scale")
     scaleCounter += 1
 } while scaleCounter < 3
+
+// Skipping items Question 2/12 Answer: false
+//This will print four lines of text.
+var hoursStudied = 0
+var goal = 10
+repeat {
+    hoursStudied += 1
+    if hoursStudied > 4 {
+        goal -= 1
+        continue
+    }
+    print("I've studied for \(hoursStudied) hours")
+} while hoursStudied < goal
+// Skipping items Question 3/12 Answer: true
+let fibonacci = [1, 1, 2, 3, 5, 8, 13, 21]
+var position = 0
+while position <= 7 {
+    print("position: \(position)")
+    let value = fibonacci[position]
+    position += 1
+    if value < 2 {
+       continue
+    }
+    print("Fibonacci number \(position) is \(value)")
+}
+// Skipping items Question 4/12 Answer: true
+for i in 1...15 {
+    let square = i * i
+    if i == 8 {
+        continue
+    }
+    print("\(i) squared is \(square)")
+}
+// Skipping items Question 5/12 Answer: false
+// kidsInClass is declared as a constant, so it can't be modified.
+//let kidsInClass = 0
+var kidsInClass = 0
+while kidsInClass < 30 {
+    print("Add another child to the class")
+    kidsInClass += 1
+}
+// Skipping items Question 6/12 Answer: false
+var passengerNumber = 0
+// This is missing a brace at the start of the while loop.
+while passengerNumber < 30 {
+    passengerNumber += 1
+    if passengerNumber == 13 {
+        print("Let's skip the unlucky one.")
+        continue
+    }
+    print("Now boarding passenger \(passengerNumber)")
+}
+// Skipping items Question 11/12 Answer: false
+for i in 1...5 {
+    if i == 5 {
+        continue
+    }
+    let sum = i + i
+    print("\(i) + \(i) is \(sum).")
+}
+// Skipping items Question 12/12 Answer: true
+var carsProduced = 0
+repeat {
+    carsProduced += 1
+    if carsProduced.isMultiple(of: 2) {
+        continue
+    }
+    print("Another car was built.")
+} while carsProduced < 20
+
