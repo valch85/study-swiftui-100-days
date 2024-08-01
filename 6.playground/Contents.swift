@@ -156,3 +156,26 @@ for i in 1...100 {
         print(i)
     }
 }
+
+// Repeat loops Question 10/12
+var frogs = 4
+repeat {
+    for _ in 1...frogs {
+        print("Ribbit!")
+    }
+} while false
+
+// Repeat loops Question 11/12
+var encores = 0
+repeat {
+    print("Let's play that piece again.")
+    encores += 1
+} while encores < 3
+
+// Repeat loops Question 12/12
+var scales = ["A", "B", "C", "D", "E"]
+var scaleCounter = 0
+repeat {
+    print("Play the \(scales[scaleCounter]) scale")
+    scaleCounter += 1
+} while scaleCounter < 3
