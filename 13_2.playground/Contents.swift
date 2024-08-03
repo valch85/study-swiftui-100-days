@@ -93,4 +93,61 @@ extension Bool {
 }
 
 //How to create and use protocol extensions
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+let guests = ["Mario", "Luigi", "Peach"]
+
+if guests.isEmpty == false {
+    print("Guest count: \(guests.count)")
+}
+
+if !guests.isEmpty {
+    print("Guest count: \(guests.count)")
+}
+
+if guests.isNotEmpty {
+    print("Guest count: \(guests.count)")
+}
+
+
+
+protocol Person {
+    var name: String { get }
+    func sayHello()
+}
+extension Person {
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct Employee: Person {
+    var name: String
+}
+
+let piter = Employee(name: "Piter")
+piter.sayHello()
+
+// Protocol extensions Question 5/12 Answer: true
+protocol Anime {
+    var availableLanguages: [String] { get set }
+    func watch(in language: String)
+}
+extension Anime {
+    func watch(in language: String) {
+        if availableLanguages.contains(language) {
+            print("Now playing in \(language)")
+        } else {
+            print("Unrecognized language.")
+        }
+    }
+}
+
+
+// Checkpoint 8
+
 
