@@ -150,4 +150,34 @@ extension Anime {
 
 // Checkpoint 8
 
+protocol Building {
+    var rooms: Int {get set}
+    var cost: Int {get set}
+    var nameEstateAgent: String {get set}
+    func salesSummary()
+}
 
+extension Building {
+    func salesSummary(){
+        var price: Int
+        price = cost * 2
+        print("Tottal sum to sale is \(price). Call \(nameEstateAgent) to buy it.")
+    }
+}
+
+struct House: Building {
+    var rooms: Int
+    var cost: Int
+    var nameEstateAgent: String
+}
+
+struct Office: Building {
+    var rooms: Int
+    var cost: Int
+    var nameEstateAgent: String
+}
+
+let houseOfRose = House(rooms: 5, cost: 350000, nameEstateAgent: "Linus Torvalds")
+let arzingerOffice = Office(rooms: 12, cost: 1200000, nameEstateAgent: "Bill Gates")
+houseOfRose.salesSummary()
+arzingerOffice.salesSummary()
