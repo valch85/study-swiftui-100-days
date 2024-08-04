@@ -150,3 +150,4 @@ print(author)
 let input2 = ""
 let number2 = Int(input2) ?? 0
 print(number2)
+
