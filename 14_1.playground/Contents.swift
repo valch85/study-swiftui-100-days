@@ -119,3 +119,34 @@ func plantTree(_ type: String?) {
     print("Planting a \(type).")
 }
 plantTree("willow")
+
+// How to unwrap optionals with nil coalescing
+let captains = [
+    "Enterprise": "Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko"
+]
+
+let new = captains["Serenity"] ?? "N/A"
+print(new)
+let new2 = captains["Serenity", default: "N/A"]
+print(new2)
+
+let tvShows = ["Archer", "Babylon 5", "Ted Lasso"]
+print(tvShows.randomElement())
+let favorite = tvShows.randomElement() ?? "None"
+print(favorite)
+
+
+struct Book {
+    let title: String
+    let author: String?
+}
+
+let book = Book(title: "Beowulf", author: nil)
+let author = book.author ?? "Anonymous"
+print(author)
+
+let input2 = ""
+let number2 = Int(input2) ?? 0
+print(number2)
