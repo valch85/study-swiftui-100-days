@@ -49,3 +49,12 @@ print(user4.name4)          //user4: Paul
 user4.name4 = "Diego"       //user4: Diego
 print(user4.name4)          //user4: Diego
 print(user5.name4)          //user5: Ringo
+
+// Dictionary
+var massiv = [
+    1: "One",
+    2: "Two",
+    3: "Tri"
+]
+massiv.removeValue(forKey: 2)
+print(massiv)
