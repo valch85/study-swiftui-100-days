@@ -59,4 +59,63 @@ if let bestScore = bestScore {
 }
 
 
-//How to unwrap optionals with guard
+// How to unwrap optionals with guard
+
+func printSquare(of number: Int?) {
+    guard let number = number else {
+        print("Missing input")
+        return
+    }
+
+    print("\(number) x \(number) is \(number * number)")
+}
+
+var myVar: Int? = 3
+
+if let unwrapped = myVar {
+    print("Run if myVar has a value inside")
+}
+
+/*
+guard let unwrapped = myVar else {
+    print("Run if myVar doesn't have a value inside")
+}
+*/
+
+// Unwrapping with guard Question 7/12 Answer: false
+// The number parameter is not optional, so we can't use guard let to unwrap it.
+func add3(to number: Int?) -> Int {
+    guard let number = number else {
+        return 3
+    }
+    return number + 3
+}
+let added = add3(to: 5)
+print(added)
+
+// Unwrapping with guard Question 10/12 Answer: false
+// This code acts as if username returns an optional string; it does not.
+func username(for id: Int?) -> String? {
+// func username(for id: Int?) -> String {
+    guard let id = id else {
+        return nil
+    }
+    if id == 1989 {
+        return "Taylor Swift"
+    } else {
+        return nil
+    }
+}
+if let user = username(for: 1989) {
+    print("Hello, \(user)!")
+}
+// Unwrapping with guard Question 12/12 Answer: false
+// This should probably read guard let type else or similar.
+func plantTree(_ type: String?) {
+    guard let type else {
+//    guard type else {
+        return
+    }
+    print("Planting a \(type).")
+}
+plantTree("willow")
