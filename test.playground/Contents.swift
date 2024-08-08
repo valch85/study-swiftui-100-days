@@ -58,3 +58,14 @@ var massiv = [
 ]
 massiv.removeValue(forKey: 2)
 print(massiv)
+
+enum Weekday {
+    case montag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag
+}
+
+var day = Weekday.montag
+print(day)
+day = .vrijdag
+print(day)
+day = .woensdag
+print(day)
