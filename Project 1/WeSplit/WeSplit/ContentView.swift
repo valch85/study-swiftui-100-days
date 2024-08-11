@@ -9,10 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var checkAmount = 0.0
-    @State private var numberOfPeople = 2
+    @State private var numberOfPeople = 2 //this is not a real number of peopel but order number; это не реальное количество людей а лишь порядковый номер выпадающего списка (потому и показывает 4)
     @State private var tipPercentage = 20
     
     let tipPercentages = [10, 15, 20, 25, 0]
+    
+    var totalPerPerson: Double {
+        // calculate the total per person here
+        let peopleCount = Double(numberOfPeople + 2)
+        let tipSelection =  Double(tipPercentage)
+        
+        let tipValue = checkAmount / 100 * tipSelection
+        let grandTotal = checkAmount + tipValue
+        let amountPerPerson = grandTotal / peopleCount
+        
+        return amountPerPerson
+    }
     
     var body: some View {
         NavigationStack {
@@ -36,7 +48,7 @@ struct ContentView: View {
                     .pickerStyle(.segmented) //make choose option like a buttons
                 }
                 Section {
-                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
             }
             .navigationTitle("WeSplit")
