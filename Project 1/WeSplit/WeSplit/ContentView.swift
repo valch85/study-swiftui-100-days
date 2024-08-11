@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2 //this is not a real number of peopel but order number; это не реальное количество людей а лишь порядковый номер выпадающего списка (потому и показывает 4)
     @State private var tipPercentage = 20
+    @FocusState private var amountIsFocused: Bool
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
@@ -32,6 +33,8 @@ struct ContentView: View {
                 Section {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
+                    
                     Picker("Number of people", selection: $numberOfPeople){
                         ForEach(2..<100) {
                             Text("\($0) people")
@@ -47,11 +50,18 @@ struct ContentView: View {
                     }
                     .pickerStyle(.segmented) //make choose option like a buttons
                 }
-                Section {
+                Section("Amount for each person") {
                     Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
             }
             .navigationTitle("WeSplit")
+            .toolbar {
+                if amountIsFocused {
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
     
