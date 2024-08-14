@@ -108,11 +108,19 @@ struct ContentView: View {
                     TextField("Amount of units", value: $enteredUnitsAmount, format: .number)
                         .keyboardType(.decimalPad)
                         .focused($enteredIsFocused)
+                    /*Picker("Units", selection: $enteredUnit) {
+                        ForEach(enteredUnits, id: \.self) {
+                            Text($0)
+                        }
+                    }*/
+                    
                     Picker("Units", selection: $enteredUnit) {
                         ForEach(enteredUnits, id: \.self) {
                             Text($0)
                         }
                     }
+                    .pickerStyle(.segmented) //make choose option like a buttons
+                    
                 }
                 Section ("Result") {
                     Picker("Units", selection: $resultUnit) {
@@ -120,6 +128,7 @@ struct ContentView: View {
                             Text($0)
                         }
                     }
+                    .pickerStyle(.segmented)
                     Text("\(resultUnitsAmount.formatted())")
                 }
             }
