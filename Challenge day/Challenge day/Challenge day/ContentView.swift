@@ -120,7 +120,7 @@ struct ContentView: View {
                             Text($0)
                         }
                     }
-                    Text("\(resultUnitsAmount)")
+                    Text("\(resultUnitsAmount.formatted())")
                 }
             }
             .navigationTitle("Lenth converter")
