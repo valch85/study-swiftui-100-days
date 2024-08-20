@@ -15,12 +15,17 @@ struct ContentView: View {
             Text("This is inside a stack")
             Spacer()
             Spacer()
+            Text("Your content")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .foregroundStyle(.white)
+                .background(.red.gradient)
         }
         .ignoresSafeArea()
         //.background(.blue)
-        ZStack(alignment: .top) {
-            Color.red
-                .frame(minWidth: 200, maxWidth: .infinity, maxHeight: 200)
+        ZStack(alignment: .center) {
+            //LinearGradient(colors: [.white, .black], startPoint: .top, endPoint: .bottom)
+            //RadialGradient(colors: [.blue, .black], center: .center, startRadius: 20, endRadius: 200)
+            AngularGradient(colors: [.red, .yellow, .green, .blue, .purple, .red], center: .center)
             Text("This is inside a stack")
                 //.background(.red)
         }
