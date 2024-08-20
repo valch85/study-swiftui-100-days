@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        //Image(decorative: "singapore") // need to load inside of the project
+        Image(systemName: "pencil") // take from the system
+            .foregroundStyle(.red)
+            .font(.largeTitle)
         VStack(alignment: .leading, spacing: 20) {
             Color(red: 1, green: 0.8, blue: 0)
             Text("Hello, world!")
@@ -19,6 +23,24 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .foregroundStyle(.white)
                 .background(.red.gradient)
+            //buttons have diff style becours of the role (ex. destructive - is red)
+            Button("Button 1") { }
+                .buttonStyle(.bordered)
+            Button("Button 2", role: .destructive) { }
+                .buttonStyle(.bordered)
+            Button("Button 3") { }
+                .buttonStyle(.borderedProminent)
+            Button("Button 4", role: .destructive) { }
+                .buttonStyle(.borderedProminent)
+            // custom button style
+            Button {
+                print("Button was tapped")
+            } label: {
+                Text("Tap me!")
+                    .padding()
+                    .foregroundStyle(.white)
+                    .background(.red)
+            }
         }
         .ignoresSafeArea()
         //.background(.blue)
@@ -29,8 +51,32 @@ struct ContentView: View {
             Text("This is inside a stack")
                 //.background(.red)
         }
+        
+        // reference to the function on actions
+        Button("Delete selection", role: .destructive, action: executeDelete)
+        
+        Button {
+            print("Edit button was tapped")
+        } label: {
+            Image(systemName: "pencil")
+        }
+        
+        Button("Edit", systemImage: "pencil") {
+            print("Edit button was tapped")
+        }
+        
+        Button {
+            print("Edit button was tapped")
+        } label: {
+            Label("Edit", systemImage: "pencil")
+                .padding()
+                .foregroundStyle(.white)
+                .background(.red)
+        }
     }
-    
+    func executeDelete() {
+            print("Now deleting…")
+        }
 }
 
 #Preview {
