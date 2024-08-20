@@ -24,7 +24,6 @@ struct ContentView: View {
             Text("This is inside a stack")
                 //.background(.red)
         }
-        .ignoresSafeArea()
     }
     
 }
