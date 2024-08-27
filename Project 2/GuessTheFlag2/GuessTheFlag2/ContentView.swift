@@ -22,7 +22,7 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var scoreAmount = 0
-    @State private var showingNewGame = false
+    //@State private var showingNewGame = false
     @State private var newGameTitle = ""
     @State private var gamesAmount = 1
     
@@ -74,14 +74,17 @@ struct ContentView: View {
             .padding()
         }
         .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
+            if gamesAmount > 8 {
+                Button("Restart", action: newGame)
+            } else {
+                Button("Continue", action: askQuestion)
+            }
         } message: {
-            Text("Your score is \(scoreAmount)")
-        }
-        .alert(newGameTitle, isPresented: $showingNewGame) {
-            Button("Restart", action: newGame)
-        } message: {
-            Text("Your score is \(scoreAmount) Restarting the game")
+            if gamesAmount > 8 {
+                Text("Your score is \(scoreAmount) Restarting the game")
+            } else {
+                Text("Your score is \(scoreAmount)")
+            }
         }
     }
     
@@ -95,10 +98,6 @@ struct ContentView: View {
         }
         
         showingScore = true
-        
-        if gamesAmount >= 8 {
-            showingNewGame = true
-        }
     }
     
     func askQuestion() {
@@ -106,7 +105,9 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
     }
     func newGame() {
-        // something to restart
+        askQuestion()
+        gamesAmount = 1
+        scoreAmount = 0
     }
 }
 
