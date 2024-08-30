@@ -15,3 +15,4 @@ struct ViewsAndModifiers1App: App {
         }
     }
 }
+
