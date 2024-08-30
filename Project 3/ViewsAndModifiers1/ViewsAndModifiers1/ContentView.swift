@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+// == View composition ==
+struct CapsuleText: View {
+    var text: String
+
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+            .padding()
+            //.foregroundStyle(.white)
+            .background(.blue)
+            .clipShape(.capsule)
+    }
+}
+
 struct ContentView: View {
     // == Conditional modifiers ==
     @State private var useRedText = false
@@ -82,6 +96,15 @@ struct ContentView: View {
                 useRedText.toggle()
             }
             .foregroundStyle(.yellow)
+        }
+        
+        // == View composition ==
+        // created special sturct
+        VStack(spacing: 10) {
+            CapsuleText(text: "First")
+                .foregroundStyle(.white)
+            CapsuleText(text: "Second")
+                .foregroundStyle(.yellow)
         }
         
         // == Why modifier order matters + What is behind the main SwiftUI view? ==
