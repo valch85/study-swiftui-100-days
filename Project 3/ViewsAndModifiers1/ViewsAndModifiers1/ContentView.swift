@@ -11,6 +11,25 @@ struct ContentView: View {
     @State private var useRedText = false
     
     var body: some View {
+        VStack {
+            Text("Gryffindor")
+                .font(.largeTitle)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .font(.title)
+        
+        VStack {
+            Text("Gryffindor")
+                .blur(radius: 0)
+            Text("Hufflepuff")
+            Text("Ravenclaw")
+            Text("Slytherin")
+        }
+        .blur(radius: 5)
+        .padding()
+        
         // 1 create one button and recolor it when needed - more efficient way
         Button("Hello, world!") {
             useRedText.toggle()
