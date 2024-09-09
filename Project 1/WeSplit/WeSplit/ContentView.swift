@@ -49,7 +49,6 @@ struct ContentView: View {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .keyboardType(.decimalPad)
                         .focused($amountIsFocused)
-                        # Project 3 views-and-modifiers-wrap-up chalange 
                     
                     Picker("Number of people", selection: $numberOfPeople){
                         ForEach(2..<100) {
@@ -76,6 +75,7 @@ struct ContentView: View {
                 }
                 Section("Amount total") { //1st task
                     Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        # Project 3 views-and-modifiers-wrap-up chalange 
                 }
                 Section("Amount per person") { //1st task
                     Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
