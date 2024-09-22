@@ -75,6 +75,7 @@ struct ContentView: View {
                 }
                 Section("Amount total") { //1st task
                     Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        # Project 3 views-and-modifiers-wrap-up chalange 
                 }
                 .foregroundColor(tipPercentage == 0 ? .red : .black) //project 3 -challenge 1
                 Section("Amount per person") { //1st task
