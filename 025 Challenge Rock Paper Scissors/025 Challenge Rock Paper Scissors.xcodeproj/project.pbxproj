@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		3973BDB22D4584C300623D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3973BD992D4584BF00623D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3973BDA02D4584BF00623D71;
+			remoteInfo = "025 Challenge Rock Paper Scissors";
+		};
+		3973BDBC2D4584C300623D71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3973BD992D4584BF00623D71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3973BDA02D4584BF00623D71;
+			remoteInfo = "025 Challenge Rock Paper Scissors";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3973BDA12D4584BF00623D71 /* 025 Challenge Rock Paper Scissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "025 Challenge Rock Paper Scissors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3973BDB12D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "025 Challenge Rock Paper ScissorsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3973BDBB2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "025 Challenge Rock Paper ScissorsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3973BDA32D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "025 Challenge Rock Paper Scissors";
+			sourceTree = "<group>";
+		};
+		3973BDB42D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "025 Challenge Rock Paper ScissorsTests";
+			sourceTree = "<group>";
+		};
+		3973BDBE2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "025 Challenge Rock Paper ScissorsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3973BD9E2D4584BF00623D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDAE2D4584C300623D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDB82D4584C300623D71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3973BD982D4584BF00623D71 = {
+			isa = PBXGroup;
+			children = (
+				3973BDA32D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */,
+				3973BDB42D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests */,
+				3973BDBE2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests */,
+				3973BDA22D4584BF00623D71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3973BDA22D4584BF00623D71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3973BDA12D4584BF00623D71 /* 025 Challenge Rock Paper Scissors.app */,
+				3973BDB12D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests.xctest */,
+				3973BDBB2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3973BDA02D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3973BDC52D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper Scissors" */;
+			buildPhases = (
+				3973BD9D2D4584BF00623D71 /* Sources */,
+				3973BD9E2D4584BF00623D71 /* Frameworks */,
+				3973BD9F2D4584BF00623D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3973BDA32D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */,
+			);
+			name = "025 Challenge Rock Paper Scissors";
+			packageProductDependencies = (
+			);
+			productName = "025 Challenge Rock Paper Scissors";
+			productReference = 3973BDA12D4584BF00623D71 /* 025 Challenge Rock Paper Scissors.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3973BDB02D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3973BDC82D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper ScissorsTests" */;
+			buildPhases = (
+				3973BDAD2D4584C300623D71 /* Sources */,
+				3973BDAE2D4584C300623D71 /* Frameworks */,
+				3973BDAF2D4584C300623D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3973BDB32D4584C300623D71 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3973BDB42D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests */,
+			);
+			name = "025 Challenge Rock Paper ScissorsTests";
+			packageProductDependencies = (
+			);
+			productName = "025 Challenge Rock Paper ScissorsTests";
+			productReference = 3973BDB12D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3973BDBA2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3973BDCB2D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper ScissorsUITests" */;
+			buildPhases = (
+				3973BDB72D4584C300623D71 /* Sources */,
+				3973BDB82D4584C300623D71 /* Frameworks */,
+				3973BDB92D4584C300623D71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3973BDBD2D4584C300623D71 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3973BDBE2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests */,
+			);
+			name = "025 Challenge Rock Paper ScissorsUITests";
+			packageProductDependencies = (
+			);
+			productName = "025 Challenge Rock Paper ScissorsUITests";
+			productReference = 3973BDBB2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3973BD992D4584BF00623D71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					3973BDA02D4584BF00623D71 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					3973BDB02D4584C300623D71 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3973BDA02D4584BF00623D71;
+					};
+					3973BDBA2D4584C300623D71 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3973BDA02D4584BF00623D71;
+					};
+				};
+			};
+			buildConfigurationList = 3973BD9C2D4584BF00623D71 /* Build configuration list for PBXProject "025 Challenge Rock Paper Scissors" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3973BD982D4584BF00623D71;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3973BDA22D4584BF00623D71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3973BDA02D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */,
+				3973BDB02D4584C300623D71 /* 025 Challenge Rock Paper ScissorsTests */,
+				3973BDBA2D4584C300623D71 /* 025 Challenge Rock Paper ScissorsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3973BD9F2D4584BF00623D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDAF2D4584C300623D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDB92D4584C300623D71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3973BD9D2D4584BF00623D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDAD2D4584C300623D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3973BDB72D4584C300623D71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3973BDB32D4584C300623D71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3973BDA02D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */;
+			targetProxy = 3973BDB22D4584C300623D71 /* PBXContainerItemProxy */;
+		};
+		3973BDBD2D4584C300623D71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3973BDA02D4584BF00623D71 /* 025 Challenge Rock Paper Scissors */;
+			targetProxy = 3973BDBC2D4584C300623D71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3973BDC32D4584C300623D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3973BDC42D4584C300623D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3973BDC62D4584C300623D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"025 Challenge Rock Paper Scissors/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-Scissors";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3973BDC72D4584C300623D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"025 Challenge Rock Paper Scissors/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-Scissors";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3973BDC92D4584C300623D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-ScissorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/025 Challenge Rock Paper Scissors.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/025 Challenge Rock Paper Scissors";
+			};
+			name = Debug;
+		};
+		3973BDCA2D4584C300623D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-ScissorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/025 Challenge Rock Paper Scissors.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/025 Challenge Rock Paper Scissors";
+			};
+			name = Release;
+		};
+		3973BDCC2D4584C300623D71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-ScissorsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "025 Challenge Rock Paper Scissors";
+			};
+			name = Debug;
+		};
+		3973BDCD2D4584C300623D71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.valch85.-25-Challenge-Rock-Paper-ScissorsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "025 Challenge Rock Paper Scissors";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3973BD9C2D4584BF00623D71 /* Build configuration list for PBXProject "025 Challenge Rock Paper Scissors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3973BDC32D4584C300623D71 /* Debug */,
+				3973BDC42D4584C300623D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3973BDC52D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper Scissors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3973BDC62D4584C300623D71 /* Debug */,
+				3973BDC72D4584C300623D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3973BDC82D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper ScissorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3973BDC92D4584C300623D71 /* Debug */,
+				3973BDCA2D4584C300623D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3973BDCB2D4584C300623D71 /* Build configuration list for PBXNativeTarget "025 Challenge Rock Paper ScissorsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3973BDCC2D4584C300623D71 /* Debug */,
+				3973BDCD2D4584C300623D71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3973BD992D4584BF00623D71 /* Project object */;
+}
