@@ -15,15 +15,74 @@ The game ends after 10 questions, at which point their score is shown.
 
 import SwiftUI
 
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(10)
+    }
+}
+
+
 struct ContentView: View {
+    @State private var compAnswer = ["Rock", "Paper", "Scissors"].shuffled()
+    @State private var scoreAmount = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            RadialGradient( stops: [
+                .init(color: Color(red: 0.0, green: 0.0, blue: 1), location: 0.3),
+                .init(color: Color.yellow, location: 0.7)
+            ], center: .top, startRadius: 300, endRadius: 700)
+            //LinearGradient(colors: [.blue, .black], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Text("Game Rock, Paper or Scissors:")
+                    .font(.largeTitle.weight(.bold))
+                    .foregroundStyle(.white)
+                    .shadow(color: .black.opacity(0.99), radius: 4.5, x: -10, y: 15)
+                VStack(spacing: 25) {
+                    VStack {
+                        Text("Choose yours answer:")
+                            .foregroundStyle(.secondary)
+                            .font(.subheadline.weight(.heavy))
+                    }
+                    Button("Rock") {
+                                // Action when the button is tapped
+                                print("Rock button tapped!")
+                    }.buttonStyle(CustomButtonStyle())
+                    Button("Paper") {
+                                // Action when the button is tapped
+                                print("Rock button tapped!")
+                    }.buttonStyle(CustomButtonStyle())
+                    Button("Scissors") {
+                                // Action when the button is tapped
+                                print("Rock button tapped!")
+                    }.buttonStyle(CustomButtonStyle())
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 50)
+                .background(.regularMaterial)
+                .clipShape(.rect(cornerRadius: 20))
+                
+                Spacer()
+                Spacer()
+                Text("Score: \(scoreAmount)")
+                    .foregroundStyle(.white)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/.bold())
+                    .shadow(color: .black.opacity(0.99), radius: 4.5, x: -10, y: 15)
+                Spacer()
+            }
+            .padding()
+            
+            
+            
         }
-        .padding()
+        
+        
     }
 }
 
