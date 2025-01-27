@@ -11,6 +11,6 @@
 5) The game ends after 10 questions, at which point their score is shown.
 
 <div style="text-align: center;">
-	<img src="for_readme/image001.png" alt="image of the app ui" width="50%">
+	<img src="for_readme/image001.png" alt="image of the app ui" width="35%">
 </div>
 
