@@ -27,8 +27,9 @@ struct CustomButtonStyle: ButtonStyle {
 
 
 struct ContentView: View {
-    @State private var compAnswer = ["Rock", "Paper", "Scissors"].shuffled()
+    @State private var varAnswer = ["Rock", "Paper", "Scissors"]
     @State private var scoreAmount = 0
+    @State private var pcAnswer = Int.random(in: 0...2)
     
     var body: some View {
         ZStack {
@@ -46,21 +47,25 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.99), radius: 4.5, x: -10, y: 15)
                 VStack(spacing: 25) {
                     VStack {
+                        Text("PC answer is: \(varAnswer[pcAnswer])" )
                         Text("Choose yours answer:")
                             .foregroundStyle(.secondary)
                             .font(.subheadline.weight(.heavy))
                     }
                     Button("Rock") {
                                 // Action when the button is tapped
+                        answerTap("Rock")
                                 print("Rock button tapped!")
                     }.buttonStyle(CustomButtonStyle())
                     Button("Paper") {
                                 // Action when the button is tapped
-                                print("Rock button tapped!")
+                        answerTap("Paper")
+                                print("Paper button tapped!")
                     }.buttonStyle(CustomButtonStyle())
                     Button("Scissors") {
                                 // Action when the button is tapped
-                                print("Rock button tapped!")
+                        answerTap("Scissors")
+                                print("Scissors button tapped!")
                     }.buttonStyle(CustomButtonStyle())
                 }
                 .frame(maxWidth: .infinity)
@@ -84,6 +89,42 @@ struct ContentView: View {
         
         
     }
+
+
+    func answerTap(_ userAnswer: String) {
+        switch(varAnswer[pcAnswer], userAnswer) {
+            case ("Rock", "Rock"):
+                scoreAmount = scoreAmount + 0
+                break
+            case ("Paper", "Paper"):
+                scoreAmount = scoreAmount + 0
+                break
+            case ("Scissors", "Scissors"):
+                scoreAmount = scoreAmount + 0
+                break
+            case ("Rock", "Paper"):
+                scoreAmount = scoreAmount - 1
+                break
+            case ("Rock", "Scissors"):
+                scoreAmount = scoreAmount + 1
+                break
+            case ("Paper", "Rock"):
+                scoreAmount = scoreAmount - 1
+                break
+            case ("Scissors", "Rock"):
+                scoreAmount = scoreAmount + 1
+                break
+            case ("Scissors", "Paper"):
+                scoreAmount = scoreAmount - 1
+                break
+            case ("Scissors", "Rock"):
+                scoreAmount = scoreAmount + 1
+                break
+            default:
+                break
+        }
+    }
+
 }
 
 #Preview {
