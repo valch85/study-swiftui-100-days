@@ -1,8 +1,13 @@
-//___FILEHEADER___
+//
+//  Project_4UITestsLaunchTests.swift
+//  Project 4UITests
+//
+//  Created by Valentyn Chubukin on 09/02/2025.
+//
 
 import XCTest
 
-final class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+final class Project_4UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

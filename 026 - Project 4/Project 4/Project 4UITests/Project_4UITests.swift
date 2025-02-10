@@ -1,8 +1,13 @@
-//___FILEHEADER___
+//
+//  Project_4UITests.swift
+//  Project 4UITests
+//
+//  Created by Valentyn Chubukin on 09/02/2025.
+//
 
 import XCTest
 
-final class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+final class Project_4UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
