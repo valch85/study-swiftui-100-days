@@ -3,3 +3,6 @@
 <div style="text-align: center;">
     <img src="for_readme/image001.png" alt="image of the app ui" width="35%">
 </div>
+<div style="text-align: center;">
+    <img src="for_readme/image002.png" alt="image of the app ui" width="35%">
+</div>
