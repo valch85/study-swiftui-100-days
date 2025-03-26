@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    @State private var amountCoffee = Array(0...10)
     
     static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -42,7 +43,15 @@ struct ContentView: View {
                     Text("Dayly coffee intake")
                         .font(.headline)
                     
-                    Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+                    //Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+                    Picker("Coffee Intake", selection: $coffeeAmount) {
+                        ForEach(amountCoffee, id: \.self) { amount in
+                            Text("^[\(amount) cup](inflect: true)")
+                        }
+                    }
+                    .pickerStyle(.menu) // You can change to .wheel, .menu, .segmented, etc.
+                    .padding()
+                    //Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
                 }
                 
             }
