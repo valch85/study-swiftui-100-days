@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Project 4
+//  Project 4 Better rest
 //
 //  Created by Valentyn Chubukin on 09/02/2025.
 //
@@ -26,24 +26,25 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
+                // Challenge 1:
                 Section {
                     Text("When do you want to wake up?")
                         .font(.headline)
                     DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                 }
+                // Challenge 1:
                 Section {
                     Text("Desired amount of sleep")
                         .font(.headline)
                     
                     Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
-                
+                // Challenge 1:
                 Section {
                     Text("Dayly coffee intake")
                         .font(.headline)
-                    
-                    //Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+                    // Challenge 2:
                     Picker("Coffee Intake", selection: $coffeeAmount) {
                         ForEach(amountCoffee, id: \.self) { amount in
                             Text("^[\(amount) cup](inflect: true)")
@@ -51,38 +52,32 @@ struct ContentView: View {
                     }
                     .pickerStyle(.menu) // You can change to .wheel, .menu, .segmented, etc.
                     .padding()
-                    //Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
+                }
+                // Challenge 3:
+                Section {
+                    Text("Recomendit bedtime is ")
+                        .font(.headline)
+                    
+                    Text("\(calculateBedtime())")
+                        .font(.title2)
+                    
                 }
                 
                 
             }
-            //Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
-            //.bold()
-            
-            
-            // use displayedComponents to decide what kind of options users should see .hourAndMinute users see just the hour and minute components
-            //        DatePicker("Please enter a date", selection: $wakeUp, displayedComponents: .hourAndMinute)
-            
-            // an in parameter that works just the same as with Stepper: we can provide it with a date range, and the date picker will ensure the user can’t select beyond it.
-            /*DatePicker("Please enter a date", selection: $wakeUp, in: Date.now...)
-             .labelsHidden()
-             
-             Text("HM: \(Date.now, format: .dateTime.hour().minute())")
-             Text("DMY: \(Date.now, format: .dateTime.day().month().year())")
-             Text("Shorteneed: \(Date.now.formatted(date: .long, time: .shortened))")
-             */
             .navigationTitle("BetterRest")
-            .toolbar {
+            /*.toolbar {
                 Button("Calculate", action: calculateBedtime)
             }
             .alert(alertTitle, isPresented: $showingAlert) {
                 Button("OK") { }
             } message: {
                 Text(alertMessage)
-            }
+            }*/
         }
     }
-    func calculateBedtime() {
+    // Challenge 3:
+    func calculateBedtime() -> String {
         do {
             let config = MLModelConfiguration()
             let model = try SleepCalculator(configuration: config)
@@ -95,39 +90,18 @@ struct ContentView: View {
 
             let sleepTime = wakeUp - prediction.actualSleep
             
-            alertTitle = "Your ideal bedtime is…"
-            alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+            //alertTitle = "Your ideal bedtime is…"
+            //alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+            return sleepTime.formatted(date: .omitted, time: .shortened)
             
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating your bedtime."
+            //alertTitle = "Error"
+            //alertMessage = "Sorry, there was a problem calculating your bedtime."
+            return "Sorry, there was a problem calculating your bedtime."
         }
-        
-        showingAlert = true
-        
+        //showingAlert = true
     }
 }
-
-/*
-func exampleDates() {
-    let now = Date.now
-    // create a second Date instance set to one day in seconds from now
-    let tomorrow = Date.now.addingTimeInterval(86400)
-    // create a range from those two
-    let range = now...tomorrow
-}
-
-func exampleDates() {
-    //    var components = DateComponents()
-    //    components.hour = 8
-    //    components.minute = 0
-    //    let date = Calendar.current.date(from: components) ?? .now
-
-    let components = Calendar.current.dateComponents([.hour, .minute], from: .now)
-    let hour = components.hour ?? 0
-    let minute = components.minute ?? 0
-}
-*/
 
 #Preview {
     ContentView()
