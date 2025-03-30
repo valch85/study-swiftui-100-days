@@ -7,11 +7,11 @@ Topics:
     Selecting dates and times with DatePicker
     Working with dates
     Training a model with Create ML
-
+	
     Building a basic layout
     Connecting SwiftUI to Core ML
     Cleaning up the user interface
-
+	
     BetterRest: Wrap up
     Review for Project 4: BetterRest
 
