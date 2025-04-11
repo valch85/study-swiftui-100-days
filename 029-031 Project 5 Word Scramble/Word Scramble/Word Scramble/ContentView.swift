@@ -11,7 +11,7 @@ struct ContentView: View {
     let people = ["Finn", "Leia", "Luke", "Rey"]
     
     var body: some View {
-        
+/*
         // List mixed content
         List {
             Section("Section 1") {
@@ -48,7 +48,16 @@ struct ContentView: View {
             }
             Text("Static Row")
         }
-        
+*/
+    }
+    // Loading resources from your app bundle
+    func testBundles() {
+        if let fileURL = Bundle.main.url(forResource: "somefile", withExtension: "txt") {
+            // we find a file in our bundle!
+            if let fileContents = try? String(contentsOf: fileURL) {
+                // we loaded file into a string!
+            }
+        }
     }
 }
 
