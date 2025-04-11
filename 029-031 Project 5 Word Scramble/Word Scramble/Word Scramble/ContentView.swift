@@ -59,6 +59,39 @@ struct ContentView: View {
             }
         }
     }
+    // one-line string -> array
+    func testStrings() {
+        let input = "a b c"
+        let letters = input.components(separatedBy: " ")
+        let letter = letters.randomElement() // return random element from array or nothing if array empty
+        let trimmed = letter?.trimmingCharacters(in: .whitespacesAndNewlines) // remove whitespaces & newlines
+        
+    }
+    // multi-line string -> array
+    func testStrings2() {
+        let input2 = """
+        a
+        b
+        c
+        """
+        let letters2 = input2.components(separatedBy: "\n")
+        let letter2 = letters2.randomElement()// return random element from array or nothing if array empty
+    }
+    
+    // work with spell checker
+    func testStrings3() {
+        // we create a word to check and an instance of UITextChecker that we can use to check that string
+        let word = "swift"
+        let checker = UITextChecker()
+        // Objective-C does not use this method of storing letters; we asked Swift to create an Objective-C string range using the entire length of all our characters
+        let range = NSRange(location: 0, length: word.utf16.count)
+        // report where it found misspellings in our word
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        // sends back another Objective-C string range, telling us where the misspelling was found
+        // Objective-C didn’t have any concept of optionals, so instead relied on special values to represent missing data.
+        // if the Objective-C range comes back as empty (no spelling mistake) – then we get back the special value NSNotFound
+        let allGood = misspelledRange.location == NSNotFound
+    }
 }
 
 #Preview {
