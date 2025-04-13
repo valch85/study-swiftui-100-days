@@ -69,3 +69,4 @@ day = .vrijdag
 print(day)
 day = .woensdag
 print(day)
+
