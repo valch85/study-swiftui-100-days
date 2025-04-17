@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Func that change string to array 
+// Func that change string to array
 func stringToArray(_ input: String) -> [String] {
     return input.map { String($0) }
 }
@@ -110,6 +110,7 @@ struct ContentView: View {
         return true
     }
     
+    // check word for misspell
     func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
