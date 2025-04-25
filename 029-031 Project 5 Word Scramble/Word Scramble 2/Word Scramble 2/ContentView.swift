@@ -57,7 +57,6 @@ struct ContentView: View {
         guard answer.count > 0 else { return }
 
         // extra validation to come
-        
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
             return
@@ -106,6 +105,7 @@ struct ContentView: View {
         !usedWords.contains(word)
     }
     
+    // check that word be bigger then 3 letters
     func isBig(word: String) -> Bool {
         if word.count > 3 {
             return true
@@ -114,6 +114,7 @@ struct ContentView: View {
         }
     }
     
+    // check is the word the same like the original
     func isSame(word: String) -> Bool {
         if word == rootWord {
             return false
