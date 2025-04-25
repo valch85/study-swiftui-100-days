@@ -115,7 +115,11 @@ struct ContentView: View {
     }
     
     func isSame(word: String) -> Bool {
-        word == rootWord
+        if word == rootWord {
+            return false
+        } else {
+            return true
+        }
     }
     
     func isPossible(word: String) -> Bool {
