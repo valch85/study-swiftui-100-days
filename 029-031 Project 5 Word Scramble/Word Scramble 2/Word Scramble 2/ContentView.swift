@@ -73,6 +73,16 @@ struct ContentView: View {
             return
         }
         
+        guard isBig(word: answer) else {
+            wordError(title: "Word less then 4 letters", message: "Make a word bigger!")
+            return
+        }
+        
+        guard isSame(word: answer) else {
+            wordError(title: "Word is the same", message: "The same word forbidden!")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
@@ -94,6 +104,18 @@ struct ContentView: View {
     
     func isOriginal(word: String) -> Bool {
         !usedWords.contains(word)
+    }
+    
+    func isBig(word: String) -> Bool {
+        if word.count > 3 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isSame(word: String) -> Bool {
+        word == rootWord
     }
     
     func isPossible(word: String) -> Bool {
