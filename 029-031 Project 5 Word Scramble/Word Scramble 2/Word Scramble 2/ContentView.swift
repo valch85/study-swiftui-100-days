@@ -78,10 +78,10 @@ struct ContentView: View {
             return
         }
         
-/*        guard isSame(word: answer) else {
+        guard isSame(word: answer) else {
             wordError(title: "Word is the same", message: "The same word forbidden!")
             return
-        } */
+        }
         
         withAnimation {
             usedWords.insert(answer, at: 0)
