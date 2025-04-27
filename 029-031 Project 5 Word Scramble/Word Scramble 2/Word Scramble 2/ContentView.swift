@@ -34,6 +34,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
+            // Chalenge 2-3
             ZStack {
                 HStack (spacing: 25) {
                     Text("Score:")
@@ -46,7 +47,7 @@ struct ContentView: View {
                         restartGame()
                         print("Game restarted")
                     }.buttonStyle(CustomButtonStyle())
-                    Button("Done") {
+                    Button("Next word") {
                         // Action when the button is tapped
                         doneWord()
                     }.buttonStyle(CustomButtonStyle())
@@ -117,10 +118,18 @@ struct ContentView: View {
             return
         }
         
+        // Chalenge 2-3
+        countScore()
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
         }
         newWord = ""
+    }
+    
+    // Chalenge 2-3
+    func countScore() {
+       score = score + newWord.count
     }
     
     func startGame() {
@@ -136,6 +145,7 @@ struct ContentView: View {
         fatalError("Couldn't load start.txt from bundle.")
     }
     
+    // Chalenge 2-3
     func restartGame() {
         // find URL inside of the bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -143,6 +153,7 @@ struct ContentView: View {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
                 usedWords = [String]()
+                score = 0
                 return
             }
         }
@@ -150,6 +161,7 @@ struct ContentView: View {
         fatalError("Couldn't load start.txt from bundle.")
     }
     
+    // Chalenge 2-3
     func doneWord() {
         // find URL inside of the bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -168,6 +180,7 @@ struct ContentView: View {
         !usedWords.contains(word)
     }
     
+    // Chalenge 1
     // check that word be bigger then 3 letters
     func isBig(word: String) -> Bool {
         if word.count > 3 {
