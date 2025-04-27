@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(10)
+    }
+}
+
 // Func that change string to array
 func stringToArray(_ input: String) -> [String] {
     return input.map { String($0) }
@@ -16,6 +26,7 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var score: Int = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -23,6 +34,27 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
+            ZStack {
+                HStack (spacing: 25) {
+                    Text("Score:")
+                        .font(.title2)
+                    Text("\(score)")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Button("Restart game") {
+                        // Action when the button is tapped
+                        restartGame()
+                        print("Game restarted")
+                    }.buttonStyle(CustomButtonStyle())
+                    Button("Done") {
+                        // Action when the button is tapped
+                        doneWord()
+                    }.buttonStyle(CustomButtonStyle())
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            
             ZStack {
                 List {
                     Section {
@@ -38,11 +70,7 @@ struct ContentView: View {
                             
                         }
                     }
-                    Button("Restart game") {
-                        // Action when the button is tapped
-                        startGame()
-                        print("Game restarted")
-                    }
+                    
                 }
                 .navigationTitle(rootWord)
                 .onSubmit(addNewWord)
@@ -96,6 +124,33 @@ struct ContentView: View {
     }
     
     func startGame() {
+        // find URL inside of the bundle
+        if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                let allWords = startWords.components(separatedBy: "\n")
+                rootWord = allWords.randomElement() ?? "silkworm"
+                return
+            }
+        }
+        
+        fatalError("Couldn't load start.txt from bundle.")
+    }
+    
+    func restartGame() {
+        // find URL inside of the bundle
+        if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                let allWords = startWords.components(separatedBy: "\n")
+                rootWord = allWords.randomElement() ?? "silkworm"
+                usedWords = [String]()
+                return
+            }
+        }
+        
+        fatalError("Couldn't load start.txt from bundle.")
+    }
+    
+    func doneWord() {
         // find URL inside of the bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
