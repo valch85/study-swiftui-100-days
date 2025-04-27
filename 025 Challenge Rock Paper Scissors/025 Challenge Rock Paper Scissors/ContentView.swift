@@ -51,7 +51,7 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.99), radius: 4.5, x: -10, y: 15)
                 VStack(spacing: 25) {
                     VStack {
-                        //Text("PC answer is: \(varAnswer[pcAnswer])" )
+                        //Text("PC answer is: \(varAnswer[pcAnswer])" )	
                         Text("Round # \(gamesAmount)")
                             .foregroundStyle(.secondary)
                             .font(.subheadline.weight(.heavy))
