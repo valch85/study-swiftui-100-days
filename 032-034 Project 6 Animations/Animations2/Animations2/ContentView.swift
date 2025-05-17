@@ -12,15 +12,15 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Tap me") {
-                // do nothing
+                withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                    animationAmount += 360
+                }
             }
             .padding(50)
             .background(.yellow)
             .foregroundStyle(.blue)
             .clipShape(.circle)
-            
-            
-            
+            .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
         }
         
     }
