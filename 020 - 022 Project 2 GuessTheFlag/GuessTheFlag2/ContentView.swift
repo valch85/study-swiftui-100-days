@@ -13,6 +13,13 @@
 
 */
 
+/*
+ Project 6, part 3:
+ 1) When you tap a flag, make it spin around 360 degrees on the Y axis.
+ 2) Make the other two buttons fade out to 25% opacity.
+ 3) Add a third effect of your choosing to the two flags the user didn’t choose – maybe make them scale down? Or flip in a different direction? Experiment!
+*/
+
 import SwiftUI
 
 // project 3 - challenge 2
@@ -40,6 +47,9 @@ struct ContentView: View {
     @State private var newGameTitle = ""
     @State private var gamesAmount = 1
     
+    
+    @State private var animationAmount = 0.0 //034 Project6 Challenge #1
+    
     var body: some View {
         ZStack {
             RadialGradient( stops: [
@@ -64,7 +74,11 @@ struct ContentView: View {
                     }
                     ForEach(0..<3) { number in
                         Button {
-                            flagTapped(number)
+                            //034 Project6 Challenge #1
+                            withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                                animationAmount += 360
+                                flagTapped(number)
+                            }
                         } label: {
                             FlagImage(of: countries[number]) // project 3 - challenge 2
                             /*Image(countries[number])
@@ -72,6 +86,9 @@ struct ContentView: View {
                                 .shadow(radius: 5)
                             */
                         }
+                        //034 Project6 Challenge #1
+                        .rotation3DEffect(
+                            .degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
                     }
                 }
                 .frame(maxWidth: .infinity)
