@@ -12,12 +12,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Tap me") {
-                isShowingRed.toggle()
+                withAnimation {
+                    isShowingRed.toggle()
+                }
             }
             if isShowingRed {
                 Rectangle()
                     .fill(Color.red)
                     .frame(width: 200, height: 200)
+                    //.transition(.scale)
+                    .transition(.asymmetric(insertion: .scale, removal: .opacity))
             }
         }
     }
