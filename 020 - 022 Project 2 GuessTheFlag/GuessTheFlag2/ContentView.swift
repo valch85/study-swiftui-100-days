@@ -93,6 +93,9 @@ struct ContentView: View {
                                 .degrees(selectedFlag == number ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                         //034 Project6 Challenge #2
                             .opacity(selectedFlag == nil || selectedFlag == number ? 1 : 0.25)
+                        //034 Project6 Challenge #3
+                            .scaleEffect(selectedFlag == nil || selectedFlag == number ? 1.0 : 0.8)
+                            .animation(.easeOut(duration: 0.5), value: selectedFlag)
                     }
                 }
                 .frame(maxWidth: .infinity)
