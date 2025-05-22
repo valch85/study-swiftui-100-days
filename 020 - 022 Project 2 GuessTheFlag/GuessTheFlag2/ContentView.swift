@@ -49,6 +49,7 @@ struct ContentView: View {
     
     
     @State private var animationAmount = 0.0 //034 Project6 Challenge #1
+    @State private var selectedFlag: Int? = nil
     
     var body: some View {
         ZStack {
@@ -76,6 +77,7 @@ struct ContentView: View {
                         Button {
                             //034 Project6 Challenge #1
                             withAnimation(.spring(duration: 1, bounce: 0.5)) {
+                                selectedFlag = number
                                 animationAmount += 360
                                 flagTapped(number)
                             }
@@ -87,8 +89,8 @@ struct ContentView: View {
                             */
                         }
                         //034 Project6 Challenge #1
-                        .rotation3DEffect(
-                            .degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+                            .rotation3DEffect(
+                                .degrees(selectedFlag == number ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                     }
                 }
                 .frame(maxWidth: .infinity)
