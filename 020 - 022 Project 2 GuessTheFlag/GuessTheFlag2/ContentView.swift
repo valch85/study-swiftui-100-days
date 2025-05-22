@@ -91,6 +91,8 @@ struct ContentView: View {
                         //034 Project6 Challenge #1
                             .rotation3DEffect(
                                 .degrees(selectedFlag == number ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
+                        //034 Project6 Challenge #2
+                            .opacity(selectedFlag == nil || selectedFlag == number ? 1 : 0.25)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -138,6 +140,8 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        //034 Project6 Challenge #2
+        selectedFlag = nil
     }
     func newGame() {
         askQuestion()
