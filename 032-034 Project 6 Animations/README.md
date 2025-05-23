@@ -1,7 +1,7 @@
 # Day 32-34 Project 6 Animation 
 
 
-Topics:
+📝 Topics:
 
     
     Animation: Introduction
@@ -19,10 +19,10 @@ Topics:
     Review for Project 6: Animation
 
 
-
+📷 Screenshot:
 <div style="text-align: center;">
     <img src="for_readme/image001.gif" alt="image of the app ui" width="35%">
 </div>
 
-[Challenges](https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
+🏆 [Challenges](https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
 
