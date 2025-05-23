@@ -15,7 +15,7 @@ Topics:
     Showing and hiding views with transitions
     Building custom transitions using ViewModifier
 	    
-    [Animation: Wrap up](https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
+    Animation: Wrap up 
     Review for Project 6: Animation
 
 
@@ -24,4 +24,5 @@ Topics:
     <img src="for_readme/image001.gif" alt="image of the app ui" width="35%">
 </div>
 
+[Challenges](https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
 
