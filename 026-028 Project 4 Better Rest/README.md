@@ -1,6 +1,6 @@
 # Day 26-28 Project 4 Better Rest
 
-Topics:
+📝 Topics:
 
     BetterRest: Introduction
     Entering numbers with Stepper
@@ -15,7 +15,7 @@ Topics:
     BetterRest: Wrap up
     Review for Project 4: BetterRest
 
-
+📷 Screenshot:
 <div style="text-align: center;">
     <img src="for_readme/image003.png" alt="image of the app ui" width="35%">
 </div>
