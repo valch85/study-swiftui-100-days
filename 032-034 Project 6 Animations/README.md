@@ -15,7 +15,7 @@ Topics:
     Showing and hiding views with transitions
     Building custom transitions using ViewModifier
 	    
-    [Animation: Wrap up] (https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
+    [Animation: Wrap up](https://www.hackingwithswift.com/books/ios-swiftui/animation-wrap-up)
     Review for Project 6: Animation
 
 
