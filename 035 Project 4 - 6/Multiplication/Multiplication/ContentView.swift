@@ -175,6 +175,7 @@ struct GameView: View {
                     // 1st VStack
                     VStack(spacing: 15) {
                         Text("Number of questions left: \(totalQuestions2)")
+                            .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
                         Text("Score: \(score)")
                             .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
                         Text("Level: \(level)")
