@@ -6,10 +6,16 @@
 //
 import SwiftUI
 
+struct GameSettings: Hashable {
+    let totalQuestions: Int
+    let level: String
+}
+
 struct ContentView: View {
     
     @State private var selectedNumber = 5
     @State private var navigationPath = NavigationPath()
+    @State private var selectedLevel = "easy"
 
     
     var body: some View {
@@ -22,43 +28,75 @@ struct ContentView: View {
                     .ignoresSafeArea(.all) // Updated to .ignoresSafeArea(.all)
                     .overlay(Color.black.opacity(0.3)) // Overlay for readability
                 
-                VStack {
-                    Text("Choose number of questions")
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .bold()
+                VStack(alignment: .leading, spacing: 20) {
+                    VStack {
+                        Text("Choose number of questions")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                            .bold()
+                        
+                        Picker("Number of questios", selection: $selectedNumber) {
+                            // Making Picker has only 3 options 5, 10 ,20
+                            ForEach([5, 10, 20], id: \.self) { number in
+                                Text("\(number)").tag(number)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .padding(5)
+                        .frame(width: 150, height: 150)
+                    }
+                    .padding(8)
+                    .background(Color.white.opacity(0.5))
+                    .cornerRadius(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
                     
-                    Picker("Number of questios", selection: $selectedNumber) {
-                        // Making Picker has only 3 options 5, 10 ,20
-                        ForEach([5, 10, 20], id: \.self) { number in
-                            Text("\(number)").tag(number)
+                    VStack {
+                        Text("Choose complexity level")
+                            .font(.title2)
+                            .foregroundColor(.black)
+                            .bold()
+                        
+                        Picker("Complexity level", selection: $selectedLevel) {
+                            ForEach(["easy", "medium", "hard"], id: \.self) { level in
+                                Text("\(level)").tag(level)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        .padding(5)
+                        .frame(width: 150, height: 150, alignment: .center)
+                    }
+                    .padding(8)
+                    .background(Color.white.opacity(0.5))
+                    .cornerRadius(8)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    
+                    HStack {
+                    Spacer()
+                    // One Submit button
+                        Button("Submit") {
+                            // Создаём структуру с выбранными значениями
+                            let settings = GameSettings(totalQuestions: selectedNumber, level: selectedLevel)
+                            navigationPath.append(settings)
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                    Spacer() // Pushes the button to the center
+                    }
+                    
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Text("Start screen")
+                                .font(.title.bold())
+                                .foregroundColor(.white)
                         }
                     }
-                    .pickerStyle(.wheel)
-                    .padding(5)
-                    .frame(width: 150, height: 150)
-                    
-                    Button("Submit") {
-                        navigationPath.append(selectedNumber)
+                    .navigationDestination(for: GameSettings.self) { settings in
+                        GameView(totalQuestions: settings.totalQuestions, level: settings.level, navigationPath: $navigationPath)
                     }
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
                 }
-                .padding(8)
-                .background(Color.white.opacity(0.5))
-                .cornerRadius(8)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("Start screen")
-                            .font(.title.bold())
-                            .foregroundColor(.white)
-                        }
-                    }
-                .navigationDestination(for: Int.self) { number in
-                    GameView(totalQuestions: number, navigationPath: $navigationPath)
-                }
+                .padding()
             }
         }
     }
@@ -67,19 +105,22 @@ struct ContentView: View {
 struct GameView: View {
     
     let totalQuestions: Int
+    let level: String
     @State private var totalQuestions2: Int
     @State private var questionCount = 0
-    @State private var number1 = Int.random(in:0...10)
-    @State private var number2 = Int.random(in:0...10)
+    @State private var number1 = 0
+    @State private var number2 = 0
     @State private var result = 0
     @State private var feedback = "" // To show  the result of the check
     @Binding var navigationPath: NavigationPath // Add binding to control navigation
+    //let level: String // Parameter for complexity level
     
     // init vars (totalQuestions, navigationPath) that are comming from ContentView
-    init(totalQuestions: Int, navigationPath: Binding<NavigationPath>) {
+    init(totalQuestions: Int, level: String, navigationPath: Binding<NavigationPath>) {
         self.totalQuestions = totalQuestions
         self._totalQuestions2 = State(initialValue: totalQuestions)
         self._navigationPath = navigationPath
+        self.level = level
     }
     
     // func to get result of * 2 digigts
@@ -94,6 +135,24 @@ struct GameView: View {
         } else {
             return false
         }
+    }
+    
+    private func generateNewQuestion() {
+        if level == "easy" {
+            number1 = Int.random(in: 0...3)
+            number2 = Int.random(in: 0...3)
+        } else if level == "medium" {
+            number1 = Int.random(in: 0...6)
+            number2 = Int.random(in: 0...6)
+        } else if level == "hard" {
+            number1 = Int.random(in: 0...10)
+            number2 = Int.random(in: 0...10)
+        } else {
+            number1 = Int.random(in: 0...1)
+            number2 = Int.random(in: 0...1)
+        }
+        result = 0
+        feedback = ""
     }
     
     var body: some View {
@@ -115,8 +174,12 @@ struct GameView: View {
                     // 1st VStack
                     VStack(spacing: 15) {
                         Text("Number of questions left: \(totalQuestions2)")
+                            .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
+                        Text("Level: \(level)")
+                            .foregroundColor(level == "easy" ? .green : level == "medium" ? .yellow : level == "hard" ? .red : .gray)
+                        
                         Text("How much is \(number1) * \(number2)?")
-                            .font(.headline)
+                            .font(.title2)
                             .foregroundColor(.white)
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)
@@ -159,7 +222,6 @@ struct GameView: View {
                                 .cornerRadius(10)
                         }
                         
-                        
                     }
                     .padding(8)
                     .background(Color.white.opacity(0.5))
@@ -167,10 +229,8 @@ struct GameView: View {
                     
                 } // 1st HStack closed
                 
-                
                 Spacer()
                     .frame(height: 20)
-                
                 
                 // 2nd HStack with "New Question" button
                 HStack(spacing: 10) {
@@ -178,8 +238,7 @@ struct GameView: View {
                     // Button to generate new question
                     Button(action: {
                         if totalQuestions2 > 0 {
-                            number1 = Int.random(in: 0...10)
-                            number2 = Int.random(in: 0...10)
+                            generateNewQuestion()
                             result = 0
                             feedback = ""
                             totalQuestions2 -= 1
