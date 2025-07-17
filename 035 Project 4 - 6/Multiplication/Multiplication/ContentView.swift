@@ -113,7 +113,7 @@ struct GameView: View {
     @State private var result = 0
     @State private var feedback = "" // To show  the result of the check
     @Binding var navigationPath: NavigationPath // Add binding to control navigation
-    //let level: String // Parameter for complexity level
+    @State private var score = 0
     
     // init vars (totalQuestions, navigationPath) that are comming from ContentView
     init(totalQuestions: Int, level: String, navigationPath: Binding<NavigationPath>) {
@@ -131,6 +131,7 @@ struct GameView: View {
     // func to check is the user's answer right
     var check_result: Bool {
         if correct_result == result {
+            score += 1
             return true
         } else {
             return false
@@ -174,6 +175,7 @@ struct GameView: View {
                     // 1st VStack
                     VStack(spacing: 15) {
                         Text("Number of questions left: \(totalQuestions2)")
+                        Text("Score: \(score)")
                             .foregroundColor(Color(red: 135/255, green: 206/255, blue: 235/255))
                         Text("Level: \(level)")
                             .foregroundColor(level == "easy" ? .green : level == "medium" ? .yellow : level == "hard" ? .red : .gray)
