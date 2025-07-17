@@ -14,10 +14,11 @@ Your goal is to build an “edutainment” app for kids to help them practice mu
     - You should randomly generate as many questions as they asked for, within the difficulty range they asked for.
 
 
-📷 Screenshot:
+🎥 Record:
 <div style="text-align: center;">
     <img src="for_readme/image003.gif" alt="image of the app ui" width="35%">
 </div>
+📷 Screenshot:
 <div style="text-align: center;">
     <img src="for_readme/image001.png" alt="image of the app ui" width="35%">
     <img src="for_readme/image002.png" alt="image of the app ui" width="35%">
