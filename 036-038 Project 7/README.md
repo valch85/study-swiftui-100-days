@@ -1,6 +1,6 @@
 # Day 36-38 Projects 7
 
-.
+iExpense
 
 📝 Topics:
     
