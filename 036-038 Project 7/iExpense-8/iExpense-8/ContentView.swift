@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ExpenceItem {
+struct ExpenceItem: Identifiable {
+    let id = UUID()
     let name: String
     let type: String
     let amount: Double
@@ -25,7 +26,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items, id: \.name) { item in
+                //when we add ": Identifiable" on struct ExpenceItem we don't need more to say by what id we are identify items
+                ForEach(expenses.items, id: \.id) { item in
+                //ForEach(expenses.items, id: \.id) { item in
                     Text(item.name)
                 }
                 .onDelete(perform: removeItems)
