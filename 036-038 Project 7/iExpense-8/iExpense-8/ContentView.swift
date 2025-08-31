@@ -49,7 +49,17 @@ struct ContentView: View {
                 //when we add ": Identifiable" on struct ExpenceItem we don't need more to say by what id we are identify items
                 ForEach(expenses.items) { item in
                 //ForEach(expenses.items, id: \.id) { item in
-                    Text(item.name)
+                    // Make layout with name, type and price
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.name) //name
+                                .font(.headline)
+                            Text(item.type) //type
+                        }
+                        Spacer()
+                        
+                        Text(item.amount, format: .currency(code: "EUR")) //price
+                    }
                 }
                 // to make deletation
                 .onDelete(perform: removeItems)
